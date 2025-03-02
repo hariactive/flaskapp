@@ -12,8 +12,7 @@ This is a Flask-based web application with JWT authentication, MongoDB integrati
 ## Setup
 1. Clone the repository:
    ```sh
-   git clone <repo-url>
-   cd <project-directory>
+   git clone https://github.com/hariactive/flaskapp.git
    ```
 2. Install dependencies:
    ```sh
@@ -39,6 +38,5 @@ This is a Flask-based web application with JWT authentication, MongoDB integrati
 - `GET /read` - Get all records.
 - `GET /read/<record_id>` - Get a specific record.
 
-## License
-This project is licensed under the MIT License.
+
 
