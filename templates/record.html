@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Details</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; }
+        h2 { text-align: center; }
+        p { font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Record Details</h2>
+        <p><strong>Name:</strong> {{ record.name }}</p>
+        <p><strong>City:</strong> {{ record.city }}</p>
+        <p><strong>Age:</strong> {{ record.age }}</p>
+        <p><strong>Created At:</strong> {{ record.created_at }}</p>
+        <p><strong>Updated At:</strong> {{ record.updated_at }}</p>
+        <a href="{{ url_for('get_all_records_page') }}">Back to All Records</a>
+    </div>
+
+</body>
+</html>

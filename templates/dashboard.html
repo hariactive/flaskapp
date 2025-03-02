@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Dashboard</h2>
+
+<!-- Create Record Form -->
+<form method="POST" action="{{ url_for('create_record') }}">
+    <input type="text" name="name" placeholder="Name" required class="form-control"><br>
+    <input type="text" name="city" placeholder="City" required class="form-control"><br>
+    <input type="number" name="age" placeholder="Age" required class="form-control"><br>
+    <button type="submit" class="btn btn-primary">Add Record</button>
+</form>
+
+<!-- Display Records -->
+<h3 class="mt-4">Your Records</h3>
+<ul class="list-group">
+    {% for record in records %}
+        <li class="list-group-item">
+            {{ record.name }} - {{ record.city }} - {{ record.age }} 
+            <a href="{{ url_for('delete_record', name=record.name) }}" class="btn btn-danger btn-sm float-end">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
