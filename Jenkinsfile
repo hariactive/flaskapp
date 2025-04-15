@@ -34,6 +34,20 @@ pipeline {
             }
         }
 
+        stage('Test App') {
+            steps {
+                script {
+                    def result = sh(script: "curl -f http://localhost:5000", returnStatus: true)
+                    if (result != 0) {
+                        error("❌ Flask app not running!")
+                    } else {
+                        echo "✅ Flask app is running!"
+                    }
+                }
+            }
+        }
+
+
         stage('Health Check') {
             steps {
                 sh '''
