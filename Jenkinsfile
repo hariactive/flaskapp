@@ -27,12 +27,13 @@ pipeline {
             steps {
                 sh '''
                     source venv/bin/activate
-                    export FLASK_APP=app.py
-                    export FLASK_RUN_PORT=5000
-                    flask run --host=0.0.0.0 --port=5000 &
+                    nohup python3 app.py > flask.log 2>&1 &
+                    sleep 5
                 '''
             }
         }
+
+
 
         stage('Test App') {
             steps {
