@@ -48,6 +48,12 @@ pipeline {
             }
         }
 
+        stage('View Flask Log') {
+            steps {
+                sh 'cat flask.log || echo "No log file found."'
+            }
+        }
+
 
         stage('Health Check') {
             steps {
